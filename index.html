@@ -23,6 +23,9 @@
                         Yrsa: ["Yrsa", "serif"],
                         MartelSans: ["Martel Sans", "serif"],
                     },
+                    boxShadow: {
+                        'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    },
                 },
             },
             plugins: [
@@ -37,16 +40,20 @@
             ],
         }
     </script>
-     <style>
+    <style>
         #menu-container {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            transform: translateX(100%);
+            /* transform: translateY(100%); */
             opacity: 0;
         }
 
         #menu-container.active {
-            transform: translateX(0);
+            /* transform: translateY(0); */
             opacity: 1;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -75,21 +82,25 @@
                             <img id="share" src="images/icons/share.png" alt="">
                             <!-- <img src="images/icons/share.png" alt=""> -->
                         </button>
-                        <button id="reportBtn" class=" border text-white rounded-full px-[16px] py-[14px] text-[12px]">Download the 2024
+                        <button id="reportBtn"
+                            class=" border text-white rounded-full px-[16px] py-[14px] text-[12px]">Download the 2024
                             Report </button>
                         <button><img id="menu" class="w-5" src="images/icons/menubtn.png" alt=""></button>
                     </div>
                 </div>
             </nav>
-            <div id="menu-container" class="absolute top-0 right-0 text-black px-6 py-5 rounded-[20px] m-1  bg-white z-20 hidden ">
+            <div id="menu-container"
+                class="absolute top-0 right-0 text-black px-7 py-4 rounded-[20px] m-2 bg-white z-20 hidden ">
                 <div class="flex items-center justify-between gap-3">
-                  <button class="border p-[14px] rounded-full bg-[#AFCD80]">
-                    <img id="share" src="images/icons/share.png" alt="">
-                  </button>
-                  <button class="text-white border bg-[#2042B6] rounded-full px-[16px] py-[14px] text-[12px]">Download the 2024
-                    Report
-                  </button>
-                  <button><img id="menu-cross" class="w-5 filter-invert-100" src="images/icons/coross.png" alt=""></button>
+                    <button class="border p-[14px] rounded-full bg-[#AFCD80]">
+                        <img id="share" src="images/icons/share.png" alt="">
+                    </button>
+                    <button class="text-white border bg-[#2042B6] rounded-full px-[16px] py-[14px] text-[12px]">Download
+                        the 2024
+                        Report
+                    </button>
+                    <button><img id="menu-cross" class="w-5 filter-invert-100" src="images/icons/coross.png"
+                            alt=""></button>
                 </div>
                 <ul class="space-y-4 pt-8">
                     <li><a href="#">The WPPOOL Index</a></li>
@@ -101,7 +112,7 @@
                     <li><a href="#">WPPOOL Portfolio Companies</a></li>
                 </ul>
                 <p class="text-blue-600 pt-6"><a href="">Visit WPPOOL</a></p>
-              </div>
+            </div>
             <!-- banner -->
             <section style="background-image: url('/images/Rectangle 1.png'); background-size: 491px 427px;"
                 class=" w-full text-white h-[574px] flex justify-center text-center bg-no-repeat bg-center">
@@ -129,11 +140,69 @@
                     </div>
                 </div>
             </section>
-            <button class="size-14 rounded-full  absolute bottom-10 right-10 bg-white text-black"><i class="fa-solid fa-arrow-down"></i></button>
+            <button
+                class="shadow-custom size-14 rounded-full text-lg absolute bottom-10 right-10 bg-white text-[#2042B6]">
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+
         </header>
         <!-- Chart section -->
-        <section class="h-[720px] bg-white">
-
+        <section class="h-[720px] flex mt-14 rounded-[20px] bg-white px-[23px] py-5 gap-6">
+            <div class="w-[224px] rounded-[14px] space-y-2 bg-[#EFF3F6] p-2">
+                <div
+                    class="shadow-custom cursor-pointer font-Yrsa bg-[#2042B6] rounded-[10px] text-white flex items-center justify-between gap-2 px-[10px] py-2">
+                    <span>The Index</span>
+                    <span>-</span>
+                </div>
+                <div
+                    class="cursor-pointer font-Yrsa rounded-[10px] flex items-center justify-between gap-2 px-[10px] py-2">
+                    <span>The Index Tab Two</span>
+                    <span>+</span>
+                </div>
+                <div
+                    class="cursor-pointer font-Yrsa rounded-[10px] flex items-center justify-between gap-2 px-[10px] py-2">
+                    <span>The Index Tab Four</span>
+                    <span>+</span>
+                </div>
+                <div
+                    class="cursor-pointer font-Yrsa rounded-[10px] flex items-center justify-between gap-2 px-[10px] py-2">
+                    <span>The Index Tab Five</span>
+                    <span>+</span>
+                </div>
+            </div>
+            <!-- chart -->
+            <div class="py-1 w-full">
+                <div class="flex gap-1 items-end">
+                    <img class="w-12" src="images/Union.png" alt="">
+                    <h2 class="text-4xl font-Yrsa">The WPPOOL Index</h2>
+                </div>
+              <div class="flex justify-between overflow-hidden pt-[10px] w-full">
+                <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <h2 class="text-[30px] font-Yrsa text-[#FC714D]">+66.2%</h2>
+                    <div class="text-[12px] pr-2 text-right border-r-4 border-orange-400">
+                        <p>WPPOOL <br>Index</p>
+                    </div>
+                </div>
+                <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <h2 class="text-[30px] font-Yrsa text-[#615DE3]">+26.6%</h2>
+                    <div class="text-[12px] pr-2 text-right border-r-4 border-indigo-400">
+                        <p>Goolge <br>Index</p>
+                    </div>
+                </div>
+                <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <h2 class="text-[30px] font-Yrsa text-[#AFCD80]">+34.1% </h2>
+                    <div class="text-[12px] pr-2 text-right border-r-4 border-lime-300">
+                        <p>WPPOOL <br>Index</p>
+                    </div>
+                </div>
+                <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <h2 class="text-[30px] font-Yrsa text-[#6F34A1]">+17%</h2>
+                    <div class="text-[12px] pr-2 text-right border-r-4 border-purple-800">
+                        <p>WPPOOL <br>Index</p>
+                    </div>
+                </div>
+              </div>
+            </div>
         </section>
     </section>
     <script src="script.js"></script>
