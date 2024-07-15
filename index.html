@@ -57,19 +57,29 @@
         }
 
         .shadow-custom {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
         }
-            /* Custom scrollbar styles */
-            .scrollbar-thin::-webkit-scrollbar {
-            width: 10px;
+
+        /* Custom scrollbar styles */
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 5px;
             height: 4px;
         }
+
         .scrollbar-thin::-webkit-scrollbar-thumb {
-            background-color: #0806a0; /* Tailwind's gray-700 */
-            border-radius: 9999px; /* Fully rounded corners */
+            background-color: #0806a0;
+            /* Tailwind's gray-700 */
+            border-radius: 9999px;
+            /* Fully rounded corners */
         }
+
         .scrollbar-thin::-webkit-scrollbar-track {
-            background-color: #4A5568; /* Tailwind's gray-300 */
+            background-color: #c2cada;
+            /* Tailwind's gray-300 */
+        }
+
+        .navbar {
+            transition: top 3s;
         }
     </style>
 </head>
@@ -78,8 +88,8 @@
     <!-- body without footer -->
     <section class="max-w-[1310px]  mx-auto p-6">
         <!-- nav with banner -->
-        <nav id="navbar" class="px-6 h-[58px] top-5 sticky z-10 bg-opacity-0 rounded-lg ">
-            <div class="flex justify-between items-center h-full">
+        <nav id="navbar" class="bg-[#2042B6] px-6 py-3 top-5 sticky z-10 rounded-t-[20px] ">
+            <div class="flex relative justify-between items-center h-full">
                 <div class="flex items-center">
                     <a href="#" class="text-2xl font-bold text-blue-500">
                         <img id="logo1" class="w-[200px] h-[34.63px]" src="images/logo.png" alt="">
@@ -97,16 +107,8 @@
                     <button><img id="menu" class="w-5" src="images/icons/menubtn.png" alt=""></button>
                 </div>
             </div>
-        </nav>
-        <header class="rounded-[20px] py-5 relative " style="
-        background-color: rgba(32, 66, 182, 1); 
-        background-image: url('./images/MaskGroup.svg'); 
-        background-blend-mode: multiply; 
-        background-repeat: no-repeat; 
-        background-size: 477px 588px; 
-        background-position: center;">
             <div id="menu-container"
-                class="absolute top-0 right-0 text-black px-7 py-4 rounded-[20px] m-2 bg-white z-20 hidden ">
+                class="absolute rounded-[20px] top-0 right-0 text-black px-7 py-4 m-[1px] bg-white z-20 hidden ">
                 <div class="flex items-center justify-between gap-3">
                     <button class="border p-[14px] rounded-full bg-[#AFCD80]">
                         <img id="share" src="images/icons/share.png" alt="">
@@ -129,15 +131,24 @@
                 </ul>
                 <p class="text-blue-600 pt-6"><a href="">Visit WPPOOL</a></p>
             </div>
+        </nav>
+        <header class="rounded-b-[20px] py-5 relative " style="
+        background-color: rgba(32, 66, 182, 1); 
+        background-image: url('./images/MaskGroup.svg'); 
+        background-blend-mode: multiply; 
+        background-repeat: no-repeat; 
+        background-size: 477px 588px; 
+        background-position: center;">
+
             <!-- banner -->
             <section style="background-image: url('./images/Rectangle1.png'); background-size: 491px 427px;"
                 class=" w-full text-white h-[574px] flex justify-center text-center bg-no-repeat bg-center">
-                <div class="absolute left-[258px] top-[300px]">
+                <div class="absolute left-[258px] top-[250px]">
                     <h2 class="text-[78px] leading-none font-Yrsa">The WPPOOL Index</h2>
                     <p class="text-[21px] font-thin">Monitor the performance of emerging, publicly traded, financial
                         technology companies</p>
                 </div>
-                <div class="absolute top-[260px] left-[44px] space-y-[40px]">
+                <div class="absolute top-[190px] left-[44px] space-y-[40px]">
                     <div class=" text-left">
                         <h2 class="text-[36px] leading-none font-Yrsa">60</h2>
                         <p class="text-[16px] font-thin">companies</p>
@@ -157,7 +168,7 @@
                 </div>
             </section>
             <button
-                class="shadow-custom size-14 rounded-full text-lg absolute bottom-10 right-10 bg-white text-[#2042B6]">
+                class="shadow-custom size-14 rounded-full text-lg absolute bottom-14 right-12 bg-white text-[#2042B6]">
                 <i class="fa-solid fa-arrow-down"></i>
             </button>
 
@@ -279,38 +290,38 @@
 
             </div>
             <!-- table start -->
-            <div class="flex flex-col ">
-                <div class="overflow-x-hidden sm:mx-0.5 lg:mx-0.5">
-                    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="h-[450px] overflow-y-auto scrollbar-thin">
+            <div class="flex flex-col">
+                <div class="overflow-x-auto sm:mx-0.5 ">
+                    <div class="py-2 inline-block min-w-full sm:px-6 ">
+                        <div class="h-[480px] overflow-y-auto scrollbar-thin">
                             <table class="min-w-full">
                                 <thead class="bg-white border-b sticky top-0 ">
                                     <tr>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Company
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Ticker
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Vertical
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Price
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Market Cap ($B)
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Revenue Growth
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             Gross Margin
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             EV/Revenue
                                         </th>
-                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
+                                        <th scope="col" class="text-sm text-[14px] text-gray-900 px-2 py-4 text-left">
                                             YTD Performance
                                         </th>
                                     </tr>
@@ -325,6 +336,70 @@
                 </div>
             </div>
             <!-- table end -->
+        </section>
+        <div class="flex items-center justify-center gap-3 mt-10 mb-[160px]">
+            <button type="button"
+                class="bg-[#2042B6] shadow-bottom w-[232px] rounded-full px-3 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                aria-expanded="true" aria-haspopup="true">
+                Download ‘All Companies’ Data
+            </button>
+            <button type="button"
+                class="bg-[#2042B6] shadow-bottom w-[232px] rounded-full px-3 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                aria-expanded="true" aria-haspopup="true">
+                View Methodology
+            </button>
+
+        </div>
+        <!-- Future Listing -->
+        <section class="px-16 mb-[155px]">
+            <h2 class="text-5xl pb-4 font-Yrsa">Potential Future Listings</h2>
+            <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet
+                odio mattis.
+                <br> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </p>
+            <div class="grid gap-5 grid-cols-4 py-[26px]">
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+                <div class=" flex items-center py-8 justify-center bg-white rounded-md">
+                    <img src="images/Future/stripe.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- Slider section -->
+        <section>
+            <h2 class="text-5xl pb-4 font-Yrsa">State of USA</h2>
+            <button type="button"
+                class="bg-[#2042B6] font-Yrsa inline-flex w-[200px] justify-between items-center rounded-full px-5 mb-[14px] py-2 text-[42px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                aria-expanded="true" aria-haspopup="true">
+                2024
+                <svg class="-mr-1 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+            <p>Click through the slides or download the report to view natively on your device.
+            </p>
         </section>
     </section>
 

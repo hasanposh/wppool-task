@@ -6,7 +6,7 @@ tailwind.config = {
               MartelSans: ["Martel Sans", "serif"],
           },
           boxShadow: {
-              'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'bottom': '0 10px 20px 5px rgba(0, 0, 0, 0.2)',
           },
       },
   },
@@ -37,9 +37,23 @@ const reportBtn = document.getElementById("reportBtn");
 const menuContainer = document.getElementById("menu-container");
 const menuCross = document.getElementById("menu-cross");
 
+// let lastScrollTop = 0;
+
+// window.addEventListener("scroll", () => {
+//   let currentScrollTop = window.scrollY;
+
+//   // Show/hide navbar based on scroll direction
+//   if (currentScrollTop > lastScrollTop) {
+//       navbar.style.top = "-78px"; // Hide navbar
+//   } else {
+//       navbar.style.top = "20px"; // Show navbar
+//   }
+//   lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+// });
+
 window.addEventListener("scroll", () => {
   if (window.scrollY >= TOP_OFFSET) {
-    navbar.classList.add("bg-[#F3F3F3]", "text-black", "shadow-custom", "mx-3");
+    navbar.classList.add("bg-[#F3F3F3]", "text-black", "shadow-custom", "mx-3",'rounded-[20px]');
     navbar.classList.remove("bg-opacity-0");
     logo1.classList.add("hidden");
     logo2.classList.remove("hidden");
@@ -49,8 +63,8 @@ window.addEventListener("scroll", () => {
     reportBtn.classList.add("text-black", "border-[#115CD9]");
     reportBtn.classList.remove("text-white");
   } else {
-    navbar.classList.remove("bg-[#F3F3F3]", "shadow-custom", "mx-3");
-    navbar.classList.add("bg-opacity-0");
+    navbar.classList.remove("bg-[#F3F3F3]", "shadow-custom", "mx-3",'rounded-[20px]');
+    navbar.classList.add("bg-[#2042B6]");
     logo1.classList.remove("hidden");
     logo2.classList.add("hidden");
     share.classList.remove("filter-invert-100");
@@ -230,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
         legend: {
           position: "bottom", // Legend positioned at the bottom of the chart
           labels: {
-            boxWidth: 20, // Width of the box next to each label
+            boxWidth: 15, // Width of the box next to each label
             padding: 15, // Padding around each label
             color: "#000000", // Color of the label text
           },
@@ -270,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         y1: {
           type: "linear",
-          display: true,
+          display: false,
           position: "right",
           grid: {
             drawOnChartArea: false,
