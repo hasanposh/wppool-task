@@ -1,3 +1,31 @@
+tailwind.config = {
+  theme: {
+      extend: {
+          fontFamily: {
+              Yrsa: ["Yrsa", "serif"],
+              MartelSans: ["Martel Sans", "serif"],
+          },
+          boxShadow: {
+              'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          },
+      },
+  },
+  plugins: [
+      function ({ addUtilities }) {
+          addUtilities({
+              '.filter-invert-100': {
+                  '-webkit-filter': 'invert(100%)',
+                  'filter': 'invert(100%)',
+              },
+          });
+      },
+  ],
+}
+
+
+
+
+
 const TOP_OFFSET = 78;
 const navbar = document.getElementById("navbar");
 const logo1 = document.getElementById("logo1");
@@ -11,7 +39,7 @@ const menuCross = document.getElementById("menu-cross");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= TOP_OFFSET) {
-    navbar.classList.add("bg-[#F3F3F3]", "text-black", "shadow-custom");
+    navbar.classList.add("bg-[#F3F3F3]", "text-black", "shadow-custom", "mx-3");
     navbar.classList.remove("bg-opacity-0");
     logo1.classList.add("hidden");
     logo2.classList.remove("hidden");
@@ -21,7 +49,7 @@ window.addEventListener("scroll", () => {
     reportBtn.classList.add("text-black", "border-[#115CD9]");
     reportBtn.classList.remove("text-white");
   } else {
-    navbar.classList.remove("bg-[#F3F3F3]", "shadow-custom");
+    navbar.classList.remove("bg-[#F3F3F3]", "shadow-custom", "mx-3");
     navbar.classList.add("bg-opacity-0");
     logo1.classList.remove("hidden");
     logo2.classList.add("hidden");
@@ -93,12 +121,12 @@ menuCross.addEventListener("click", () => {
 //       plugins: {
 //         title: {
 //           display: true,
-          
+
 //         },
 //         legend: {
 //           position: "bottom",
 //           labels: {
-//             boxWidth: 20,
+//             boxWidth: 15,
 //             padding: 15,
 //             color: "#000000", // Color of the label text
 //           },
@@ -123,7 +151,7 @@ menuCross.addEventListener("click", () => {
 //           },
 //         },
 //       },
-      
+
 //       scales: {
 //         y: {
 //           type: "linear",
@@ -212,11 +240,12 @@ document.addEventListener("DOMContentLoaded", function () {
           borderColor: "#000000", // Black border
           borderWidth: 1, // Border width
           bodyColor: "#000000", // Black text color
+          titleColor: "#000000",
           callbacks: {
             label: function (context) {
-              let label = context.dataset.label || '';
+              let label = context.dataset.label || "";
               if (label) {
-                label += ': ';
+                label += ": ";
               }
               if (context.parsed.y !== null) {
                 label += context.parsed.y + "%";
@@ -234,9 +263,9 @@ document.addEventListener("DOMContentLoaded", function () {
           min: -10, // Minimum value for y-axis
           max: 100, // Maximum value for y-axis
           ticks: {
-            callback: function(value) {
+            callback: function (value) {
               return value + "%";
-            }
+            },
           },
         },
         y1: {
@@ -255,24 +284,27 @@ document.addEventListener("DOMContentLoaded", function () {
   new Chart(ctx, config);
 });
 
-// table 
-    const tableRow = document.getElementById("myTable");
+// table
+const tableRow = document.getElementById("myTable");
 
-    // Fetch data from API
-    fetch('/companyInfo.json')
-    .then(response => response.json())
-    .then(data => {
-        // Reference to tbody element
-        const tablebody = document.getElementById("tablebody");
-        
-        // Add data to table
-        data.forEach(item => {
-            const row = document.createElement("tr");
-            Object.values(item).forEach(value => {
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            });
-            tablebody.appendChild(row);
-        });
+// Fetch data from API
+fetch("/companyInfo.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // Reference to tbody element
+    const tablebody = document.getElementById("tablebody");
+
+    // Add data to table
+    data.forEach((item) => {
+      const row = document.createElement("tr");
+      row.classList = "even:bg-white odd:bg-gray-100 border-b";
+      Object.values(item).forEach((value) => {
+        const cell = document.createElement("td");
+        cell.classList =
+          "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900";
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
+      tablebody.appendChild(row);
     });
+  });

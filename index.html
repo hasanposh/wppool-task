@@ -17,7 +17,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <!-- script -->
+    <script defer type="module" src="script.js"></script>
+    <!-- <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -41,7 +43,7 @@
                 },
             ],
         }
-    </script>
+    </script> -->
     <style>
         #menu-container {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -57,6 +59,18 @@
         .shadow-custom {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
+            /* Custom scrollbar styles */
+            .scrollbar-thin::-webkit-scrollbar {
+            width: 10px;
+            height: 4px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #0806a0; /* Tailwind's gray-700 */
+            border-radius: 9999px; /* Fully rounded corners */
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background-color: #4A5568; /* Tailwind's gray-300 */
+        }
     </style>
 </head>
 
@@ -64,33 +78,33 @@
     <!-- body without footer -->
     <section class="max-w-[1310px]  mx-auto p-6">
         <!-- nav with banner -->
+        <nav id="navbar" class="px-6 h-[58px] top-5 sticky z-10 bg-opacity-0 rounded-lg ">
+            <div class="flex justify-between items-center h-full">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-500">
+                        <img id="logo1" class="w-[200px] h-[34.63px]" src="images/logo.png" alt="">
+                        <img id="logo2" class="hidden w-[200px] h-[34.63px]" src="images/logoblack.png" alt="">
+                    </a>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                    <button id="shareBtn" class=" border p-[14px] rounded-full">
+                        <img id="share" src="images/icons/share.png" alt="">
+                        <!-- <img src="images/icons/share.png" alt=""> -->
+                    </button>
+                    <button id="reportBtn"
+                        class=" border text-white rounded-full px-[16px] py-[14px] text-[12px]">Download the 2024
+                        Report </button>
+                    <button><img id="menu" class="w-5" src="images/icons/menubtn.png" alt=""></button>
+                </div>
+            </div>
+        </nav>
         <header class="rounded-[20px] py-5 relative " style="
         background-color: rgba(32, 66, 182, 1); 
-        background-image: url('/images/Mask group.svg'); 
+        background-image: url('./images/MaskGroup.svg'); 
         background-blend-mode: multiply; 
         background-repeat: no-repeat; 
         background-size: 477px 588px; 
         background-position: center;">
-            <nav id="navbar" class="px-6 h-[58px] top-5 sticky z-10 bg-opacity-0 rounded-lg mx-3">
-                <div class="flex justify-between items-center h-full">
-                    <div class="flex items-center">
-                        <a href="#" class="text-2xl font-bold text-blue-500">
-                            <img id="logo1" class="w-[200px] h-[34.63px]" src="images/logo.png" alt="">
-                            <img id="logo2" class="hidden w-[200px] h-[34.63px]" src="images/logoblack.png" alt="">
-                        </a>
-                    </div>
-                    <div class="flex items-center justify-between gap-3">
-                        <button id="shareBtn" class=" border p-[14px] rounded-full">
-                            <img id="share" src="images/icons/share.png" alt="">
-                            <!-- <img src="images/icons/share.png" alt=""> -->
-                        </button>
-                        <button id="reportBtn"
-                            class=" border text-white rounded-full px-[16px] py-[14px] text-[12px]">Download the 2024
-                            Report </button>
-                        <button><img id="menu" class="w-5" src="images/icons/menubtn.png" alt=""></button>
-                    </div>
-                </div>
-            </nav>
             <div id="menu-container"
                 class="absolute top-0 right-0 text-black px-7 py-4 rounded-[20px] m-2 bg-white z-20 hidden ">
                 <div class="flex items-center justify-between gap-3">
@@ -116,7 +130,7 @@
                 <p class="text-blue-600 pt-6"><a href="">Visit WPPOOL</a></p>
             </div>
             <!-- banner -->
-            <section style="background-image: url('/images/Rectangle 1.png'); background-size: 491px 427px;"
+            <section style="background-image: url('./images/Rectangle1.png'); background-size: 491px 427px;"
                 class=" w-full text-white h-[574px] flex justify-center text-center bg-no-repeat bg-center">
                 <div class="absolute left-[258px] top-[300px]">
                     <h2 class="text-[78px] leading-none font-Yrsa">The WPPOOL Index</h2>
@@ -265,12 +279,12 @@
 
             </div>
             <!-- table start -->
-            <div class="flex flex-col">
-                <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+            <div class="flex flex-col ">
+                <div class="overflow-x-hidden sm:mx-0.5 lg:mx-0.5">
                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="overflow-hidden">
+                        <div class="h-[450px] overflow-y-auto scrollbar-thin">
                             <table class="min-w-full">
-                                <thead class="bg-white border-b">
+                                <thead class="bg-white border-b sticky top-0 ">
                                     <tr>
                                         <th scope="col" class="text-sm text-[14px] text-gray-900 px-3 py-4 text-left">
                                             Company
@@ -301,31 +315,7 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody id="tablebody" class=" overflow-auto">
-                                    <tr class="bg-gray-100 border-b">
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            Mark
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            Otto
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            @mdo
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white border-b">
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            Mark
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            Otto
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            @mdo
-                                        </td>
-                                    </tr>
+                                <tbody id="tablebody" class=" ">
 
 
                                 </tbody>
@@ -337,7 +327,7 @@
             <!-- table end -->
         </section>
     </section>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
