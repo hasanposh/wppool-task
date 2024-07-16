@@ -1,30 +1,26 @@
 tailwind.config = {
   theme: {
-      extend: {
-          fontFamily: {
-              Yrsa: ["Yrsa", "serif"],
-              MartelSans: ["Martel Sans", "serif"],
-          },
-          boxShadow: {
-              'bottom': '0 10px 20px 5px rgba(0, 0, 0, 0.2)',
-          },
+    extend: {
+      fontFamily: {
+        Yrsa: ["Yrsa", "serif"],
+        MartelSans: ["Martel Sans", "serif"],
       },
+      boxShadow: {
+        bottom: "0 10px 20px 5px rgba(0, 0, 0, 0.2)",
+      },
+    },
   },
   plugins: [
-      function ({ addUtilities }) {
-          addUtilities({
-              '.filter-invert-100': {
-                  '-webkit-filter': 'invert(100%)',
-                  'filter': 'invert(100%)',
-              },
-          });
-      },
+    function ({ addUtilities }) {
+      addUtilities({
+        ".filter-invert-100": {
+          "-webkit-filter": "invert(100%)",
+          filter: "invert(100%)",
+        },
+      });
+    },
   ],
-}
-
-
-
-
+};
 
 const TOP_OFFSET = 78;
 const navbar = document.getElementById("navbar");
@@ -53,7 +49,13 @@ const menuCross = document.getElementById("menu-cross");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= TOP_OFFSET) {
-    navbar.classList.add("bg-[#F3F3F3]", "text-black", "shadow-custom", "mx-3",'rounded-[20px]');
+    navbar.classList.add(
+      "bg-[#F3F3F3]",
+      "text-black",
+      "shadow-custom",
+      "mx-3",
+      "rounded-[20px]"
+    );
     navbar.classList.remove("bg-opacity-0");
     logo1.classList.add("hidden");
     logo2.classList.remove("hidden");
@@ -63,7 +65,12 @@ window.addEventListener("scroll", () => {
     reportBtn.classList.add("text-black", "border-[#115CD9]");
     reportBtn.classList.remove("text-white");
   } else {
-    navbar.classList.remove("bg-[#F3F3F3]", "shadow-custom", "mx-3",'rounded-[20px]');
+    navbar.classList.remove(
+      "bg-[#F3F3F3]",
+      "shadow-custom",
+      "mx-3",
+      "rounded-[20px]"
+    );
     navbar.classList.add("bg-[#2042B6]");
     logo1.classList.remove("hidden");
     logo2.classList.add("hidden");
@@ -322,3 +329,37 @@ fetch("/companyInfo.json")
       tablebody.appendChild(row);
     });
   });
+
+//  Initialize Swiper
+var swiper = new Swiper(".mySwiper", {
+  direction: 'horizontal',
+  slidesPerView: 2.5,
+  spaceBetween: 10,
+  pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+  },
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+  on: {
+      init: function() {
+          updateSlideNumber(this);
+      },
+      slideChange: function() {
+          updateSlideNumber(this);
+      }
+  }
+});
+
+function updateSlideNumber(swiper) {
+  const currentSlides = [];
+  for (let i = swiper.activeIndex; i < swiper.activeIndex + 2; i++) {
+      currentSlides.push(i + 1);
+  }
+  const totalSlides = swiper.slides.length;
+  const currentSlidesText = currentSlides.map(slide => `<span class="current-slide">${slide}</span>`).join(' and ');
+  const slideText = `pages ${currentSlidesText} of ${totalSlides}`;
+  document.querySelector('.slide-number').innerHTML = slideText;
+}

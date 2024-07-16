@@ -15,11 +15,16 @@
     <script src="https://kit.fontawesome.com/6b0cbd5cf0.js" crossorigin="anonymous"></script>
     <!-- chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- script -->
     <script defer type="module" src="script.js"></script>
-    <!-- <script>
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -43,7 +48,8 @@
                 },
             ],
         }
-    </script> -->
+
+    </script>
     <style>
         #menu-container {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -80,6 +86,40 @@
 
         .navbar {
             transition: top 3s;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .swiper-button-next {
+            left: 80px
+        }
+
+        .swiper-button-prev {
+            right: 80px
+        }
+
+        .swiper-pagination {
+            margin-left: 20px;
+            /* Adjust margin to provide space between buttons and pagination */
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Semi-transparent background for better visibility */
+            border-radius: 50%;
+            /* Rounded buttons */
+            padding: 10px;
+            /* Increase clickable area */
         }
     </style>
 </head>
@@ -236,8 +276,7 @@
                                 class="bg-[#2042B6] inline-flex w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                 aria-expanded="true" aria-haspopup="true">
                                 Sectors
-                                <svg class="-mr-1 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"
-                                    aria-hidden="true">
+                                <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd"
                                         d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                                         clip-rule="evenodd" />
@@ -247,8 +286,7 @@
                                 class="bg-[#2042B6] inline-flex w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                 aria-expanded="true" aria-haspopup="true">
                                 Types of IPO
-                                <svg class="-mr-1 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"
-                                    aria-hidden="true">
+                                <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd"
                                         d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                                         clip-rule="evenodd" />
@@ -386,13 +424,15 @@
             </div>
         </section>
         <!-- Slider section -->
-        <section>
+        <section style="background-image: url('./images/sliderbg.png'); background-size: 500px 500px;"
+            class=" w-full h-[650px] bg-right bg-no-repeat ">
+
             <h2 class="text-5xl pb-4 font-Yrsa">State of USA</h2>
             <button type="button"
                 class="bg-[#2042B6] font-Yrsa inline-flex w-[200px] justify-between items-center rounded-full px-5 mb-[14px] py-2 text-[42px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 aria-expanded="true" aria-haspopup="true">
                 2024
-                <svg class="-mr-1 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd"
                         d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                         clip-rule="evenodd" />
@@ -400,8 +440,254 @@
             </button>
             <p>Click through the slides or download the report to view natively on your device.
             </p>
+            <!-- Swiper -->
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper w-full h-[380px] relative">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex justify-center items-center w-[580px] h-[326px] text-center text-lg">
+                        <img class="object-cover" src="images/slide1.png" alt="">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center w-[580px] h-[326px] text-center text-lg">
+                        <img class="object-cover" src="images/slider2.png" alt="">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center w-[580px] h-[326px] text-center text-lg">
+                        <img class="object-cover" src="images/slider3.png" alt="">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center w-[580px] h-[326px] text-center text-lg">
+                        <img class="object-cover" src="images/slider3.png" alt="">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center w-[580px] h-[326px] text-center text-lg">
+                        <img class="object-cover" src="images/slider3.png" alt="">
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 flex items-center">
+                    <div class="swiper-button-prev bg-white text-black transform -translate-y-1/2 right-1/2"></div>
+                    <div class="swiper-button-next bg-white text-black transform -translate-y-1/2 right-1/2"></div>
+                    <!-- <div class="swiper-pagination ml-4"></div> -->
+                </div>
+                <div class=" slide-number absolute bottom-4 left-44 rounded-[24px] py-3 bg-white text-black px-3 ">
+                </div>
+                <button type="button"
+                    class="absolute right-16 bottom-6 bg-[#2042B6] shadow-lg w-[232px] rounded-full px-3 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                    aria-expanded="true" aria-haspopup="true">
+                    Download the 2023 Report
+                </button>
+            </div>
         </section>
+        <!-- Stories & Ideas section  -->
+        <section class=" w-fullbg-right bg-no-repeat ">
+
+            <h2 class="text-5xl pb-4 font-Yrsa">Stories & Ideas</h2>
+            <p>The latest news and updates</p>
+            <div class="grid grid-cols-3 gap-5">
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16 relative">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                        <p class="absolute top-0 bg-white p-[1px]">CARROT</p>
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+                <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class=" -mt-16 relative">
+                        <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
+                            src="images/man.png">
+                        <p class="absolute top-0 bg-white p-[1px]">CARROT</p>
+                    </div>
+
+                    <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
+
+                    <p class="font-Yrsa mb-2">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime mollitia.</p>
+                    <button type="button"
+                        class="bg-[#2042B6] w-[100px] rounded-full px-2 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Read More
+                    </button>
+
+                </div>
+            </div>
+        </section>
+        <hr class="border-blue-500 border-2 opacity-60 mt-40 mb-32">
     </section>
+    <footer class=" max-w-[1590px] h-[800px] bg-[#dad9d9]">
+        <div class="container max-w-[1310px]  h-full ml-auto px-20 py-20">
+            <div class="grid gap-8 sm:grid-cols-4  h-full lg:grid-cols-7">
+                <div class="col-span-4 flex flex-col  h-full justify-between">
+                    <h2 class="text-5xl pb-4 font-Yrsa">Experience remarkable
+                        WordPress products with a
+                        new level of power, beauty,
+                        and human-centered designs.</h2>
+
+
+                    <div>
+                        <div class="flex gap-4 opacity-60">
+                            <a href="#"
+                                class="block mt-3 text-sm font-medium  duration-700  hover:text-gray-400 dark:hover:text-gray-200 hover:underline">©2024</a>
+                            <a href="#"
+                                class="block mt-3 text-sm font-medium  duration-700  hover:text-gray-400 dark:hover:text-gray-200 hover:underline">Terms
+                                of Use</a>
+                            <a href="#"
+                                class="block mt-3 text-sm font-medium  duration-700  hover:text-gray-400 dark:hover:text-gray-200 hover:underline">Privacy
+                                Policy</a>
+                        </div>
+                        <a href="#"
+                            class="block mt-3 text-sm font-medium  duration-700  hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                            molestiae quas vel sint commodi repudiandae consequuntur voluptatum
+                            laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga
+                            praesentium optio, eaque rerum! Provident similique accusantium nemo autem.
+                            Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate
+                            aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaera
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <div>
+                    <div class="font-bold  opacity-60 uppercase">
+                        Jump to
+                    </div>
+
+                    <a href="#"
+                        class="block text-blue-600 mt-5  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        About Us
+                    </a>
+                    <a href="#"
+                        class="block text-blue-600 mt-3  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+
+                        Portfolio
+                    </a>
+                    <a href="#"
+                        class="block text-blue-600 mt-3  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        News
+                    </a>
+                    <a href="#"
+                        class="block text-blue-600 mt-3  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        Stories
+                    </a>
+                    <a href="#"
+                        class="block text-blue-600 mt-3  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        Jobs
+                    </a>
+                    <a href="#"
+                        class="block text-blue-600 mt-3  font-medium  duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        About Us
+                    </a>
+
+                </div>
+
+                <div class="col-span-2">
+                    <div class="pb-4 border-b-2 border-black  border-opacity-30">
+                        <h2 class="font-bold pb-1">Cambridge</h2>
+                        <p>70728 Yost Burg, <br>
+                            North Magdaleneview, <br>
+                            UT 97952-2814</p>
+                    </div>
+                    <div class="pb-4 border-b-2 border-black border-opacity-30">
+                        <h2 class="font-bold pb-1  mt-6">Cambridge</h2>
+                        <p>70728 Yost Burg, <br>
+                            North Magdaleneview, <br>
+                            UT 97952-2814</p>
+                    </div>
+                    <div class="pb-4 border-b-2 border-black mt-6  border-opacity-30">
+                        <h2 class="font-bold pb-1">Cambridge</h2>
+                        <p>70728 Yost Burg, <br>
+                            North Magdaleneview, <br>
+                            UT 97952-2814</p>
+                    </div>
+                    <div class="text-4xl py-4 space-x-5 opacity-60">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </footer>
 
 </body>
 
