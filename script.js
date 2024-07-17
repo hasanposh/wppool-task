@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const tableRow = document.getElementById("myTable");
 
 // Fetch data from API
-fetch("../Hasan Mahmud/companyInfo.json")
+fetch("companyInfo.json")
   .then((response) => response.json())
   .then((data) => {
     // Reference to tbody element
