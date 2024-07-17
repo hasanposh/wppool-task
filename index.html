@@ -126,10 +126,10 @@
 
 <body class="font-MartelSans bg-[#EDEDED]">
     <!-- body without footer -->
-    <section class="max-w-[1310px]  mx-auto p-6">
+    <section class="max-w-[1310px]  mx-auto p-2 md:p-6">
         <!-- nav with banner -->
         <nav id="navbar" class="bg-[#2042B6] px-6 py-3 top-5 sticky z-10 rounded-t-[20px] ">
-            <div class="flex relative justify-between items-center h-full">
+            <div class="flex flex-col-reverse md:flex-row gap-3 relative justify-between items-center h-full">
                 <div class="flex items-center">
                     <a href="#" class="text-2xl font-bold text-blue-500">
                         <img id="logo1" class="w-[200px] h-[34.63px]" src="images/logo.png" alt="">
@@ -172,50 +172,52 @@
                 <p class="text-blue-600 pt-6"><a href="">Visit WPPOOL</a></p>
             </div>
         </nav>
-        <header class="rounded-b-[20px] py-5 relative " style="
+        <header class="rounded-b-[20px] py-5 relative bg-[length:277px_388px] md:bg-[length:477px_588px]" style="
         background-color: rgba(32, 66, 182, 1); 
         background-image: url('./images/MaskGroup.svg'); 
         background-blend-mode: multiply; 
         background-repeat: no-repeat; 
-        background-size: 477px 588px; 
+        /* background-size: 477px 588px;  */
         background-position: center;">
 
             <!-- banner -->
-            <section style="background-image: url('./images/Rectangle1.png'); background-size: 491px 427px;"
-                class=" w-full text-white h-[574px] flex justify-center text-center bg-no-repeat bg-center">
-                <div class="absolute left-[258px] top-[250px]">
-                    <h2 class="text-[78px] leading-none font-Yrsa">The WPPOOL Index</h2>
-                    <p class="text-[21px] font-thin">Monitor the performance of emerging, publicly traded, financial
+            <section style="background-image: url('./images/Rectangle1.png');
+             /* background-size: 491px 427px; */
+             "
+                class="bg-[length:200px_250px] md:bg-[length:491px_427px] w-full text-white h-[370px] md:h-[574px] flex justify-center text-center bg-no-repeat bg-center">
+                <div class="absolute  top-36 md:left-[258px] md:top-[250px]">
+                    <h2 class="text-3xl md:text-[78px] leading-none font-Yrsa">The WPPOOL Index</h2>
+                    <p class="px-3 text-sm md:text-[21px] font-thin">Monitor the performance of emerging, publicly traded, financial
                         technology companies</p>
                 </div>
-                <div class="absolute top-[190px] left-[44px] space-y-[40px]">
+                <div class="absolute top-[210px] md:top-[190px] left-4 md:left-[44px] space-y-2 md:space-y-[40px]">
                     <div class=" text-left">
-                        <h2 class="text-[36px] leading-none font-Yrsa">60</h2>
-                        <p class="text-[16px] font-thin">companies</p>
+                        <h2 class="text-xl md:text-[36px] leading-none font-Yrsa">60</h2>
+                        <p class="text-sm md:text-[16px] font-thin">companies</p>
                     </div>
                     <div class=" text-left">
-                        <h2 class="text-[36px] leading-none font-Yrsa">$100B</h2>
-                        <p class="text-[16px] font-thin">Market cap</p>
+                        <h2 class="text-xl md:text-[36px] leading-none font-Yrsa">$100B</h2>
+                        <p class="text-sm md:text-[16px] font-thin">Market cap</p>
                     </div>
                     <div class=" text-left">
-                        <h2 class="text-[36px] leading-none font-Yrsa">3.5x</h2>
-                        <p class="text-[16px] font-thin">companies</p>
+                        <h2 class="text-xl md:text-[36px] leading-none font-Yrsa">3.5x</h2>
+                        <p class="text-sm md:text-[16px] font-thin">companies</p>
                     </div>
                     <div class=" text-left">
-                        <h2 class="text-[36px] leading-none font-Yrsa">60%</h2>
-                        <p class="text-[16px] font-thin">LTM avg. revenue growth rate</p>
+                        <h2 class="text-xl md:text-[36px] leading-none font-Yrsa">60%</h2>
+                        <p class="text-sm md:text-[16px] font-thin">LTM avg. revenue growth rate</p>
                     </div>
                 </div>
             </section>
             <button
-                class="shadow-custom size-14 rounded-full text-lg absolute bottom-14 right-12 bg-white text-[#2042B6]">
+                class="shadow-custom size-12 md:size-14 rounded-full text-lg absolute bottom-10 md:bottom-14 right-6 md:right-12 bg-white text-[#2042B6]">
                 <i class="fa-solid fa-arrow-down"></i>
             </button>
 
         </header>
         <!-- Chart section -->
-        <section class="h-[720px] flex mt-[60px] rounded-[20px] bg-white px-[23px] py-5 gap-6">
-            <div class="w-[224px] rounded-[14px] space-y-2 bg-[#EFF3F6] p-2">
+        <section class="md:h-[720px] flex flex-col md:flex-row mt-[60px] rounded-[20px] bg-white px-[23px] py-5 gap-6">
+            <div class="w-full md:w-[224px] rounded-[14px] space-y-2 bg-[#EFF3F6] p-2">
                 <div
                     class="shadow-custom cursor-pointer font-Yrsa bg-[#2042B6] rounded-[10px] text-white flex items-center justify-between gap-2 px-[10px] py-2">
                     <span>The Index</span>
@@ -241,28 +243,28 @@
             <div class="py-1 w-full">
                 <div class="flex gap-1 items-end">
                     <img class="w-12" src="images/Union.png" alt="">
-                    <h2 class="text-4xl font-Yrsa">The WPPOOL Index</h2>
+                    <h2 class="text-2xl md:text-4xl font-Yrsa">The WPPOOL Index</h2>
                 </div>
-                <div class="flex justify-between overflow-hidden pt-[10px] w-full">
-                    <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                <div class="flex flex-col md:flex-row gap-2 justify-between overflow-hidden pt-[10px] w-full">
+                    <div class="bg-[#F3F3F3] rounded-[6px] md:w-[230px] flex justify-between items-center p-[10px]">
                         <h2 class="text-[30px] font-Yrsa text-[#FC714D]">+66.2%</h2>
                         <div class="text-[12px] pr-2 text-right border-r-4 border-orange-400">
                             <p>WPPOOL <br>Index</p>
                         </div>
                     </div>
-                    <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <div class="bg-[#F3F3F3] rounded-[6px] md:w-[230px] flex justify-between items-center p-[10px]">
                         <h2 class="text-[30px] font-Yrsa text-[#615DE3]">+26.6%</h2>
                         <div class="text-[12px] pr-2 text-right border-r-4 border-indigo-400">
                             <p>Goolge <br>Index</p>
                         </div>
                     </div>
-                    <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <div class="bg-[#F3F3F3] rounded-[6px] md:w-[230px] flex justify-between items-center p-[10px]">
                         <h2 class="text-[30px] font-Yrsa text-[#AFCD80]">+34.1% </h2>
                         <div class="text-[12px] pr-2 text-right border-r-4 border-lime-300">
                             <p>WPPOOL <br>Index</p>
                         </div>
                     </div>
-                    <div class="bg-[#F3F3F3] rounded-[6px] w-[230px] flex justify-between items-center p-[10px]">
+                    <div class="bg-[#F3F3F3] rounded-[6px] md:w-[230px] flex justify-between items-center p-[10px]">
                         <h2 class="text-[30px] font-Yrsa text-[#6F34A1]">+17%</h2>
                         <div class="text-[12px] pr-2 text-right border-r-4 border-purple-800">
                             <p>WPPOOL <br>Index</p>
@@ -270,10 +272,10 @@
                     </div>
                 </div>
                 <div>
-                    <div class="pt-[20px] flex items-center justify-between">
+                    <div class="pt-[20px] flex flex-col gap-2 md:flex-row items-center justify-between">
                         <div>
                             <button type="button"
-                                class="bg-[#2042B6] inline-flex w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                class="bg-[#2042B6] inline-flex md:w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                 aria-expanded="true" aria-haspopup="true">
                                 Sectors
                                 <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -283,7 +285,7 @@
                                 </svg>
                             </button>
                             <button type="button"
-                                class="bg-[#2042B6] inline-flex w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                class="bg-[#2042B6] inline-flex md:w-[178px] justify-between items-center rounded-full px-3 py-2 text-[12px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                 aria-expanded="true" aria-haspopup="true">
                                 Types of IPO
                                 <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -310,14 +312,14 @@
             </div>
         </section>
         <!-- All companies table section -->
-        <section class="h-[600px] mt-[60px] rounded-[20px] bg-white px-[23px] py-5 gap-6 ">
-            <div class="font-Yrsa flex items-center justify-between">
-                <h2 class="text-5xl">All Companies</h2>
+        <section class="md:h-[600px] mt-[60px] rounded-[20px] bg-white p-5 md:p-10 gap-6 ">
+            <div class="font-Yrsa flex flex-col md:flex-row  justify-between">
+                <h2 class="text-3xl md:text-5xl">All Companies</h2>
                 <div class="relative">
                     <input
-                        class="bg-[#F3F3F3] h-[58px] w-[588px] appearance-none border pl-10 border-gray-300 hover:border-gray-400 transition-colors rounded-md p-[18px] text-black leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 placeholder-black"
-                        id="username" type="text" placeholder="Search Companies" style="font-size: 24px;" />
-                    <div class="absolute left-0 inset-y-0 flex items-center">
+                        class="bg-[#F3F3F3] h-[58px] md:w-[588px] appearance-none border pl-10 border-gray-300 hover:border-gray-400 transition-colors rounded-md p-[18px] text-black text-xl md:text-2xl leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 placeholder-black"
+                        id="username" type="text" placeholder="Search Companies"  />
+                    <div class="absolute  inset-y-0 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3 text-black hover:text-gray-500"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -330,7 +332,7 @@
             <!-- table start -->
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:mx-0.5 ">
-                    <div class="py-2 inline-block min-w-full sm:px-6 ">
+                    <div class="py-2 inline-block min-w-full ">
                         <div class="h-[480px] overflow-y-auto scrollbar-thin">
                             <table class="min-w-full">
                                 <thead class="bg-white border-b sticky top-0 ">
@@ -375,7 +377,7 @@
             </div>
             <!-- table end -->
         </section>
-        <div class="flex items-center justify-center gap-3 mt-10 mb-[160px]">
+        <div class="flex items-center justify-center gap-3 mt-10 mb-10 md:mb-[160px]">
             <button type="button"
                 class="bg-[#2042B6] shadow-bottom w-[232px] rounded-full px-3 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 aria-expanded="true" aria-haspopup="true">
@@ -389,47 +391,49 @@
 
         </div>
         <!-- Future Listing -->
-        <section class="px-16 mb-[155px]">
-            <h2 class="text-5xl pb-4 font-Yrsa">Potential Future Listings</h2>
+        <section class="px-3 md:px-16 mb-10 md:mb-[155px]">
+            <h2 class="text-3xl md:text-5xl pb-4 font-Yrsa">Potential Future Listings</h2>
             <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                 aliquet
                 odio mattis.
                 <br> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
             </p>
-            <div class="grid gap-5 grid-cols-4 py-[26px]">
+            <div class="grid gap-2 md:gap-5 grid-cols-2 md:grid-cols-4 py-[26px]">
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
                 <div class=" flex items-center py-8 justify-center bg-white rounded-md">
-                    <img src="images/Future/stripe.png" alt="">
+                    <img class="w-3/4 md:w-2/4" src="images/Future/stripe.png" alt="">
                 </div>
             </div>
         </section>
         <!-- Slider section -->
-        <section style="background-image: url('./images/sliderbg.png'); background-size: 500px 500px;"
-            class=" w-full h-[650px] bg-right bg-no-repeat ">
+        <section style="background-image: url('./images/sliderbg.png'); 
+        /* background-size: 500px 500px; */
+        "
+            class=" bg-[length:200px_250px] md:bg-[length:500px_500px] w-full h-[650px] bg-right bg-no-repeat ">
 
-            <h2 class="text-5xl pb-4 font-Yrsa">State of USA</h2>
+            <h2 class="text-3xl md:text-5xl md:pb-4 font-Yrsa">State of USA</h2>
             <button type="button"
-                class="bg-[#2042B6] font-Yrsa inline-flex w-[200px] justify-between items-center rounded-full px-5 mb-[14px] py-2 text-[42px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                class="bg-[#2042B6] font-Yrsa inline-flex w-[200px] justify-between items-center rounded-full px-5 mb-[14px] md:py-2  text-3xl md:text-[42px]  hover:text-gray-900 text-white shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 aria-expanded="true" aria-haspopup="true">
                 2024
                 <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -476,11 +480,11 @@
             </div>
         </section>
         <!-- Stories & Ideas section  -->
-        <section class=" w-fullbg-right bg-no-repeat ">
+        <section class="">
 
             <h2 class="text-5xl pb-4 font-Yrsa">Stories & Ideas</h2>
             <p>The latest news and updates</p>
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid  grid-cols-1 md:grid-cols-3 gap-5">
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <div class=" -mt-16">
                         <img class="object-cover size-32  dark:border-blue-400" alt="Testimonial avatar"
@@ -587,13 +591,98 @@
                 </div>
             </div>
         </section>
-        <hr class="border-blue-500 border-2 opacity-60 mt-40 mb-32">
+        <hr class="border-blue-500 border-2 opacity-60 mt-10 md:mt-40 mb-10 md:mb-32">
+        <!-- about WPPOOL -->
+        <section class="md:h-[450px] rounded-[20px] bg-white px-[23px] gap-6 flex flex-col-reverse md:flex-row py-3">
+            <div class="flex flex-col justify-center text-left md:pl-12">
+                <h2 class="text-3xl md:text-6xl font-Yrsa">About WPPOOL</h2>
+            <h2 class=" text-2xl md:text-4xl text-gray-400 pb-2 font-Yrsa">Investing in wppool for over 50 years</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+                <button type="button"
+                class="bg-[#2042B6] mt-4 shadow-bottom w-[232px] rounded-full py-3 text-[20px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                aria-expanded="true" aria-haspopup="true">
+                Contact WPPOOL
+            </button>
+            </div>
+            <img src="images/aboutWPPOOL.jpeg" alt="">
+        </section>
+        <hr class="border-blue-500 border-2 opacity-60 mt-10 md:mt-40 mb-10 md:mb-32">
+        <!-- WPPOOL Portfolio Companies -->
+         <section>
+            <h2 class="text-3xl md:text-6xl font-Yrsa">Selected WPPOOL Portfolio Companies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-10 my-6 md:my-10">
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+                <div class="rounded-lg p-4 bg-white">
+                    <img src="images/alibaba.png" alt="">
+                </div>
+        
+            </div>
+         </section>
     </section>
-    <footer class=" max-w-[1590px] h-[800px] bg-[#dad9d9]">
-        <div class="container max-w-[1310px]  h-full ml-auto px-20 py-20">
+    <!-- footer -->
+    <footer class=" max-w-[1590px] md:h-[800px] bg-[#dad9d9]">
+        <div class="container max-w-[1310px]  h-full ml-auto px-4 py-4 md:px-20 md:py-20">
             <div class="grid gap-8 sm:grid-cols-4  h-full lg:grid-cols-7">
                 <div class="col-span-4 flex flex-col  h-full justify-between">
-                    <h2 class="text-5xl pb-4 font-Yrsa">Experience remarkable
+                    <h2 class="text-3xl md:text-5xl pb-4 font-Yrsa">Experience remarkable
                         WordPress products with a
                         new level of power, beauty,
                         and human-centered designs.</h2>
@@ -680,7 +769,7 @@
                     <div class="text-4xl py-4 space-x-5 opacity-60">
                         <i class="fa-brands fa-linkedin"></i>
                         <i class="fa-brands fa-twitter"></i>
-                        
+
                     </div>
                 </div>
             </div>
