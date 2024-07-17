@@ -19,109 +19,13 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="customCSS.CSS">
     <!-- script -->
     <script defer type="module" src="script.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        Yrsa: ["Yrsa", "serif"],
-                        MartelSans: ["Martel Sans", "serif"],
-                    },
-                    boxShadow: {
-                        'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                    },
-                },
-            },
-            plugins: [
-                function ({ addUtilities }) {
-                    addUtilities({
-                        '.filter-invert-100': {
-                            '-webkit-filter': 'invert(100%)',
-                            'filter': 'invert(100%)',
-                        },
-                    });
-                },
-            ],
-        }
 
-    </script>
-    <style>
-        #menu-container {
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            /* transform: translateY(100%); */
-            opacity: 0;
-        }
-
-        #menu-container.active {
-            /* transform: translateY(0); */
-            opacity: 1;
-        }
-
-        .shadow-custom {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Custom scrollbar styles */
-        .scrollbar-thin::-webkit-scrollbar {
-            width: 5px;
-            height: 4px;
-        }
-
-        .scrollbar-thin::-webkit-scrollbar-thumb {
-            background-color: #0806a0;
-            /* Tailwind's gray-700 */
-            border-radius: 9999px;
-            /* Fully rounded corners */
-        }
-
-        .scrollbar-thin::-webkit-scrollbar-track {
-            background-color: #c2cada;
-            /* Tailwind's gray-300 */
-        }
-
-        .navbar {
-            transition: top 3s;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-        }
-
-        .swiper-button-next {
-            left: 80px
-        }
-
-        .swiper-button-prev {
-            right: 80px
-        }
-
-        .swiper-pagination {
-            margin-left: 20px;
-            /* Adjust margin to provide space between buttons and pagination */
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            z-index: 10;
-            background-color: rgba(255, 255, 255, 0.7);
-            /* Semi-transparent background for better visibility */
-            border-radius: 50%;
-            /* Rounded buttons */
-            padding: 10px;
-            /* Increase clickable area */
-        }
-    </style>
 </head>
 
 <body class="font-MartelSans bg-[#EDEDED]">
@@ -187,7 +91,8 @@
                 class="bg-[length:200px_250px] md:bg-[length:491px_427px] w-full text-white h-[370px] md:h-[574px] flex justify-center text-center bg-no-repeat bg-center">
                 <div class="absolute  top-36 md:top-60 md:left-28 lg:left-[258px] lg:top-[250px]">
                     <h2 class="text-3xl md:text-5xl lg:text-[78px] leading-none font-Yrsa">The WPPOOL Index</h2>
-                    <p class="px-3 text-sm md:text-[21px] font-thin">Monitor the performance of emerging, publicly traded, financial
+                    <p class="px-3 text-sm md:text-[21px] font-thin">Monitor the performance of emerging, publicly
+                        traded, financial
                         technology companies</p>
                 </div>
                 <div class="absolute top-[210px] md:top-[190px] left-4 md:left-[44px] space-y-2 md:space-y-[40px]">
@@ -318,7 +223,7 @@
                 <div class="relative">
                     <input
                         class="bg-[#F3F3F3] h-[58px] md:w-[588px] appearance-none border pl-10 border-gray-300 hover:border-gray-400 transition-colors rounded-md p-[18px] text-black text-xl md:text-2xl leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 placeholder-black"
-                        id="username" type="text" placeholder="Search Companies"  />
+                        id="username" type="text" placeholder="Search Companies" />
                     <div class="absolute  inset-y-0 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3 text-black hover:text-gray-500"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -428,8 +333,7 @@
         <!-- Slider section -->
         <section style="background-image: url('./images/sliderbg.png'); 
         /* background-size: 500px 500px; */
-        "
-            class=" bg-[length:200px_250px] md:bg-[length:500px_500px] w-full h-[650px] bg-right bg-no-repeat ">
+        " class=" bg-[length:200px_250px] md:bg-[length:500px_500px] w-full h-[650px] bg-right bg-no-repeat ">
 
             <h2 class="text-3xl md:text-5xl md:pb-4 font-Yrsa">State of USA</h2>
             <button type="button"
@@ -444,7 +348,7 @@
             </button>
             <p>Click through the slides or download the report to view natively on your device.
             </p>
-      
+
 
             <!-- Swiper -->
             <div class="swiper mySwiper w-full h-[380px] relative">
@@ -470,7 +374,8 @@
                     <div class="swiper-button-next bg-white text-black transform -translate-y-1/2 right-1/2"></div>
                     <!-- <div class="swiper-pagination ml-4"></div> -->
                 </div>
-                <div class=" slide-number absolute bottom-16 md:bottom-4 left-44 rounded-[24px] py-3 bg-white text-black px-3 ">
+                <div
+                    class=" slide-number absolute bottom-16 md:bottom-4 left-44 rounded-[24px] py-3 bg-white text-black px-3 ">
                 </div>
                 <button type="button"
                     class="absolute right-16 bottom-6 bg-[#2042B6] shadow-lg w-[232px] rounded-full px-3 py-2 text-[12px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -487,8 +392,7 @@
             <div class="grid  grid-cols-1 md:grid-cols-3 gap-5">
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                     </div>
 
                     <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
@@ -504,8 +408,7 @@
                 </div>
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                     </div>
 
                     <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
@@ -521,8 +424,7 @@
                 </div>
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16 relative">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                         <p class="absolute top-0 bg-white p-[1px]">CARROT</p>
                     </div>
 
@@ -539,8 +441,7 @@
                 </div>
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                     </div>
 
                     <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
@@ -556,8 +457,7 @@
                 </div>
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                     </div>
 
                     <h2 class="mt-6  text-[#2042B6] text-sm ">By: Sahabuddin Sagor</h2>
@@ -573,8 +473,7 @@
                 </div>
                 <div class=" w-full px-8 py-4 mt-16 bg-white rounded-lg shadow-lg ">
                     <div class=" -mt-16 relative">
-                        <img class="object-cover size-32  " alt="Testimonial avatar"
-                            src="images/man.png">
+                        <img class="object-cover size-32  " alt="Testimonial avatar" src="images/man.png">
                         <p class="absolute top-0 bg-white p-[1px]">CARROT</p>
                     </div>
 
@@ -596,86 +495,87 @@
         <section class=" rounded-[20px] bg-white px-[23px] gap-6 flex flex-col-reverse lg:flex-row">
             <div class="flex flex-col justify-center text-left md:pl-12 p-4">
                 <h2 class="text-3xl md:text-6xl font-Yrsa">About WPPOOL</h2>
-            <h2 class=" text-2xl md:text-4xl text-gray-400 pb-2 font-Yrsa">Investing in wppool for over 50 years</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+                <h2 class=" text-2xl md:text-4xl text-gray-400 pb-2 font-Yrsa">Investing in wppool for over 50 years
+                </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                    optio, eaque rerum! Provident similique accusantium nemo autem.</p>
                 <button type="button"
-                class="bg-[#2042B6] mt-4 shadow-bottom w-[232px] rounded-full py-3 text-[20px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                aria-expanded="true" aria-haspopup="true">
-                Contact WPPOOL
-            </button>
+                    class="bg-[#2042B6] mt-4 shadow-bottom w-[232px] rounded-full py-3 text-[20px] hover:text-gray-900 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                    aria-expanded="true" aria-haspopup="true">
+                    Contact WPPOOL
+                </button>
             </div>
             <img src="images/aboutWPPOOL.jpeg" alt="">
         </section>
         <hr class="border-blue-500 border-2 opacity-60 mt-10 md:mt-40 mb-10 md:mb-32">
         <!-- WPPOOL Portfolio Companies -->
-         <section>
+        <section>
             <h2 class="text-3xl md:text-6xl font-Yrsa">Selected WPPOOL Portfolio Companies</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-10 my-6 md:my-10">
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
                 <div class="rounded-lg p-4 bg-white">
                     <img src="images/alibaba.png" alt="">
                 </div>
-        
+
             </div>
-         </section>
+        </section>
     </section>
     <!-- footer -->
     <footer class=" max-w-[1590px] lg:h-[800px] bg-[#dad9d9]">

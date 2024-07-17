@@ -1,0 +1,70 @@
+#menu-container {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    /* transform: translateY(100%); */
+    opacity: 0;
+}
+
+#menu-container.active {
+    /* transform: translateY(0); */
+    opacity: 1;
+}
+
+.shadow-custom {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #0806a0;
+    /* Tailwind's gray-700 */
+    border-radius: 9999px;
+    /* Fully rounded corners */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background-color: #c2cada;
+    /* Tailwind's gray-300 */
+}
+
+.navbar {
+    transition: top 3s;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.swiper-button-next {
+    left: 80px
+}
+
+.swiper-button-prev {
+    right: 80px
+}
+
+.swiper-pagination {
+    margin-left: 20px;
+    /* Adjust margin to provide space between buttons and pagination */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent background for better visibility */
+    border-radius: 50%;
+    /* Rounded buttons */
+    padding: 10px;
+    /* Increase clickable area */
+}

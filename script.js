@@ -1,26 +1,4 @@
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        Yrsa: ["Yrsa", "serif"],
-        MartelSans: ["Martel Sans", "serif"],
-      },
-      boxShadow: {
-        bottom: "0 10px 20px 5px rgba(0, 0, 0, 0.2)",
-      },
-    },
-  },
-  plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        ".filter-invert-100": {
-          "-webkit-filter": "invert(100%)",
-          filter: "invert(100%)",
-        },
-      });
-    },
-  ],
-};
+
 
 const TOP_OFFSET = 78;
 const navbar = document.getElementById("navbar");
@@ -33,19 +11,19 @@ const reportBtn = document.getElementById("reportBtn");
 const menuContainer = document.getElementById("menu-container");
 const menuCross = document.getElementById("menu-cross");
 
-// let lastScrollTop = 0;
+let lastScrollTop = 0;
 
-// window.addEventListener("scroll", () => {
-//   let currentScrollTop = window.scrollY;
+window.addEventListener("scroll", () => {
+  let currentScrollTop = window.scrollY;
 
-//   // Show/hide navbar based on scroll direction
-//   if (currentScrollTop > lastScrollTop) {
-//       navbar.style.top = "-78px"; // Hide navbar
-//   } else {
-//       navbar.style.top = "20px"; // Show navbar
-//   }
-//   lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
-// });
+  // Show/hide navbar based on scroll direction
+  if (currentScrollTop > lastScrollTop) {
+      navbar.style.top = "-278px"; // Hide navbar
+  } else {
+      navbar.style.top = "20px"; // Show navbar
+  }
+  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+});
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= TOP_OFFSET) {
@@ -246,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
       plugins: {
         title: {
           display: true,
-          text: "Chart.js Line Chart with Four Datasets",
+          // text: "Chart.js Line Chart with Four Datasets",
         },
         legend: {
           position: "bottom", // Legend positioned at the bottom of the chart
@@ -390,3 +368,29 @@ function updateSlideNumber(swiper) {
   const slideText = `pages ${currentSlidesText} of ${totalSlides}`;
   document.querySelector('.slide-number').innerHTML = slideText;
 }
+
+
+// tailwind custom css
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        Yrsa: ["Yrsa", "serif"],
+        MartelSans: ["Martel Sans", "serif"],
+      },
+      boxShadow: {
+        bottom: "0 10px 20px 5px rgba(0, 0, 0, 0.2)",
+      },
+    },
+  },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".filter-invert-100": {
+          "-webkit-filter": "invert(100%)",
+          filter: "invert(100%)",
+        },
+      });
+    },
+  ],
+};
