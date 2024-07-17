@@ -333,7 +333,7 @@ fetch("/companyInfo.json")
 //  Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
   direction: 'horizontal',
-  slidesPerView: 2.5,
+  slidesPerView: 2.5, // Default slidesPerView
   spaceBetween: 10,
   pagination: {
       el: ".swiper-pagination",
@@ -342,6 +342,33 @@ var swiper = new Swiper(".mySwiper", {
   navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1.2,
+          spaceBetween: 5
+      },
+      // when window width is >= 480px
+      480: {
+          slidesPerView: 1.5,
+          spaceBetween: 10
+      },
+      // when window width is >= 640px
+      640: {
+          slidesPerView: 2.5,
+          spaceBetween: 15
+      },
+      // when window width is >= 768px
+      768: {
+          slidesPerView: 2.5,
+          spaceBetween: 20
+      },
+      // when window width is >= 1024px
+      1024: {
+          slidesPerView: 2.5,
+          spaceBetween: 20
+      }
   },
   on: {
       init: function() {
